@@ -44,18 +44,6 @@ class PatientDocumentSetUp(models.TransientModel):
         ondelete='restrict'
     )
 
-    def _reopen_form(self):
-        self.ensure_one()
-        action = {
-            'type': 'ir.actions.act_window',
-            'res_model': self._name,
-            'res_id': self.id,
-            'view_type': 'form',
-            'view_mode': 'form',
-            'target': 'new',
-        }
-        return action
-
     def do_patient_document_setup(self):
         self.ensure_one()
 
