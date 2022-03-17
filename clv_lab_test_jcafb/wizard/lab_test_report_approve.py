@@ -47,20 +47,6 @@ class LabTestReportApprove(models.TransientModel):
         default=lambda *a: datetime.now().strftime('%Y-%m-%d'),
     )
 
-    # @api.multi
-    def _reopen_form(self):
-        self.ensure_one()
-        action = {
-            'type': 'ir.actions.act_window',
-            'res_model': self._name,
-            'res_id': self.id,
-            'view_type': 'form',
-            'view_mode': 'form',
-            'target': 'new',
-        }
-        return action
-
-    # @api.multi
     def do_lab_test_report_approve(self):
         self.ensure_one()
 

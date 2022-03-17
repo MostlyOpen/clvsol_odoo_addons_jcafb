@@ -61,7 +61,6 @@ class LabTestReportExportXLS(models.TransientModel):
         default=_default_templates_dir_path_report
     )
 
-    # @api.multi
     def do_lab_test_report_export_xls(self):
         self.ensure_one()
 

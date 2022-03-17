@@ -47,28 +47,12 @@ class LabTestResultApprove(models.TransientModel):
         default=lambda *a: datetime.now().strftime('%Y-%m-%d'),
     )
 
-    # @api.multi
-    def _reopen_form(self):
-        self.ensure_one()
-        action = {
-            'type': 'ir.actions.act_window',
-            'res_model': self._name,
-            'res_id': self.id,
-            'view_type': 'form',
-            'view_mode': 'form',
-            'target': 'new',
-        }
-        return action
-
-    # @api.multi
     def do_lab_test_result_approve(self):
         self.ensure_one()
 
         for lab_test_result in self.lab_test_result_ids:
 
             _logger.info(u'%s %s %s', '>>>>>', lab_test_result.code, lab_test_result.ref_id.name)
-
-            # if lab_test_result.state == 'available':
 
             _logger.info(u'%s %s %s', '>>>>>', self.employee_id.name, self.date_approved)
 

@@ -51,18 +51,6 @@ class LabTestResultSetSurveyUserInput(models.TransientModel):
         default=_default_reference
     )
 
-    def _reopen_form(self):
-        self.ensure_one()
-        action = {
-            'type': 'ir.actions.act_window',
-            'res_model': self._name,
-            'res_id': self.id,
-            'view_type': 'form',
-            'view_mode': 'form',
-            'target': 'new',
-        }
-        return action
-
     def do_lab_test_result_set_survey_user_input(self):
         self.ensure_one()
 

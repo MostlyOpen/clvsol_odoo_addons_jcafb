@@ -22,18 +22,6 @@ class LabTestResultSurveyUserInputSetInProgress(models.TransientModel):
         default=_default_lab_test_result_ids
     )
 
-    def _reopen_form(self):
-        self.ensure_one()
-        action = {
-            'type': 'ir.actions.act_window',
-            'res_model': self._name,
-            'res_id': self.id,
-            'view_type': 'form',
-            'view_mode': 'form',
-            'target': 'new',
-        }
-        return action
-
     def do_lab_test_result_survey_user_input_set_in_progress(self):
         self.ensure_one()
 
