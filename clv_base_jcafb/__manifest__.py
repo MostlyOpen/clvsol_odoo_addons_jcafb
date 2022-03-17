@@ -14,9 +14,7 @@
         'clv_base',
     ],
     'data': [
-        # # 'views/mfile_menu_view.xml',
-        # # 'data/annotation_seq.xml',
-        # 'data/global_settings_filestore.xml',
+        'data/global_settings_filestore.xml',
     ],
     'demo': [],
     'test': [],
