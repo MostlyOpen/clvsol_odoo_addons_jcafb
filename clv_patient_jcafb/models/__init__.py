@@ -8,3 +8,4 @@ from . import document
 from . import event_attendee
 from . import lab_test
 from . import patient_code_pool
+from . import patient_code_pool_item

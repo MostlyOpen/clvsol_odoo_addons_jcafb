@@ -8,14 +8,6 @@ from odoo import fields, models
 class PatientCodePool(models.Model):
     _description = 'Patient Code Pool'
     _name = "clv.patient.code_pool"
-    _inherit = 'clv.abstract.code_pool', 'clv.abstract.code'
+    _inherit = 'clv.abstract.pool'
 
-    code = fields.Char(string='Patient Code', required=False, default='/')
-
-    code_sequence = fields.Char(default='clv.person.code')
-
-    patient_id = fields.Many2one(
-        comodel_name='clv.patient',
-        string='Related Patient',
-        ondelete='restrict'
-    )
+    code_sequence = fields.Char(string='Code Sequence', default='clv.person.code')

@@ -10,4 +10,10 @@
         sequence="10"
         action="clv_patient_jcafb.clv_patient_code_pool_action"/>
 
+    <menuitem name="Patient Code Pool Items" id="clv_pool.menu_base_config_pool_patient_code_pool_items" 
+        parent="clv_pool.menu_base_config_pool"
+        groups="clv_pool.group_user"
+        sequence="10"
+        action="clv_patient_jcafb.clv_patient_code_pool_item_action"/>
+
 </odoo>

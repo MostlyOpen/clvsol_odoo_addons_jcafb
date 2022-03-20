@@ -4,25 +4,25 @@
 
 <odoo>
 
-    <record id="clv_patient_code_pool_setup_view_form" model="ir.ui.view">
-        <field name="name">clv.patient.code_pool_setup.form</field>
-        <field name="model">clv.patient.code_pool_setup</field>
+    <record id="clv_patient_code_pool_item_setup_view_form" model="ir.ui.view">
+        <field name="name">clv.patient.code_pool.item_setup.form</field>
+        <field name="model">clv.patient.code_pool.item_setup</field>
         <field name="arch" type="xml">
             <form>
                 <div class="oe_right">
                 </div>
-                <label for="pool_instance_ids"/>
-                <field name="pool_instance_ids" options="{'no_open': False, 'no_create': True}"/>
+                <label for="patient_code_pool_ids"/>
+                <field name="patient_code_pool_ids" options="{'no_open': False, 'no_create': True}"/>
                 <group>
                     <group>
-                        <field name="quantity"/>
+                        <field name="code_quantity"/>
                     </group>
                 </group>
                 <footer>
                     <button 
                         type="object"
-                        name="do_patient_code_pool_setup"
-                        string="Code Pool Setup"
+                        name="do_patient_code_pool_item_setup"
+                        string="Code Pool Item Setup"
                         class="oe_highlight"
                         />
                     <button special="cancel" string="Cancel"/>
@@ -33,10 +33,10 @@
     </record>
 
     <!-- More button Action -->
-    <record id="clv_patient_code_pool_setup_action" model="ir.actions.act_window">
-        <field name="name">Patient Code Pool Setup</field>
-        <field name="binding_model_id" ref="clv_pool.model_clv_pool_instance"/>
-        <field name="res_model">clv.patient.code_pool_setup</field>
+    <record id="clv_patient_code_pool_item_setup_action" model="ir.actions.act_window">
+        <field name="name">Patient Code Pool Item Setup</field>
+        <field name="binding_model_id" ref="model_clv_patient_code_pool"/>
+        <field name="res_model">clv.patient.code_pool.item_setup</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
