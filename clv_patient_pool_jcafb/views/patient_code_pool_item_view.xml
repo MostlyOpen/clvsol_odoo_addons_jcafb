@@ -93,7 +93,25 @@
             <page name="settings" position="before">
                 <page string="Items">
                     <group>
-                        <field name="count_items"/>
+                        <group>
+                            <field name="count_items"/>
+                        </group>
+                        <group>
+                            <button name="clv_patient_pool_jcafb.clv_patient_code_pool_item_action"
+                                    type="action"
+                                    class="oe_stat_button"
+                                    icon="fa-list"
+                                    context="{'search_default_patient_code_pool_id': id}"
+                                    attrs="{'invisible': [('count_items', '=', 0)]}"
+                                    >
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="count_items"/>
+                                    </span>
+                                    <span class="o_stat_text"> Items(s)</span>
+                                </div>
+                            </button>
+                        </group>
                     </group>
                     <field name="item_ids" colspan="4" nolabel="1"/>
                 </page>
