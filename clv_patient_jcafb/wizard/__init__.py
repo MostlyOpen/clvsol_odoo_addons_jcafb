@@ -5,4 +5,3 @@
 from . import patient_associate_to_set
 from . import patient_document_setup
 from . import patient_lab_test_request_setup
-from . import patient_code_pool_item_setup
