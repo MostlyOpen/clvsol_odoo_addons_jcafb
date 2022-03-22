@@ -20,6 +20,7 @@
         'views/patient_code_pool_item_view.xml',
         'views/pool_menu_view.xml',
         'wizard/patient_code_pool_item_setup_view.xml',
+        'wizard/patient_code_pool_item_seek_view.xml',
     ],
     'demo': [],
     'test': [],
