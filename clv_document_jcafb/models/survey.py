@@ -27,10 +27,6 @@ class Document(models.Model):
         related='survey_user_input_id.state_2',
         store=False
     )
-    base_survey_user_input_id = fields.Many2one(
-        comodel_name='survey.user_input',
-        string='Base Survey User Input'
-    )
 
     survey_url = fields.Char(
         string='Survey URL',
