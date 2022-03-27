@@ -14,7 +14,6 @@
         'clv_base',
     ],
     'data': [
-        'data/global_settings_filestore.xml',
     ],
     'demo': [],
     'test': [],
