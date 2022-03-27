@@ -14,7 +14,7 @@
     'depends': [
         'clv_residence_jcafb',
         'clv_address_jcafb',
-        'clv_family_jcafb',
+        # 'clv_family_jcafb',
         'clv_document',
         'clv_event',
         'clv_lab_test',
