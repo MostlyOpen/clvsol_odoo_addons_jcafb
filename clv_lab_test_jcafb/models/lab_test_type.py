@@ -8,10 +8,6 @@ from odoo import fields, models
 class LabTestType(models.Model):
     _inherit = 'clv.lab_test.type'
 
-    survey_id = fields.Many2one(
-        comodel_name='survey.survey',
-        string='Survey Type')
-
     template_file_name_result = fields.Char(
         string='Template File Name (Result)',
         required=False,
