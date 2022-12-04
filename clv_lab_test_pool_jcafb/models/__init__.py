@@ -4,3 +4,5 @@
 
 from . import lab_test_request_code_pool
 from . import lab_test_request_code_pool_item
+from . import lab_test_result_code_pool
+from . import lab_test_result_code_pool_item
