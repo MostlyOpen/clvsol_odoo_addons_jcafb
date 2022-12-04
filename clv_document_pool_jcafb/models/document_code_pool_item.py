@@ -14,7 +14,7 @@ class DocumentCodePoolItem(models.Model):
 
     code = fields.Char(string='Document Code', required=False, default='/')
 
-    # code_sequence = fields.Char(string='Code Sequence', default='clv.person.code')
+    # code_sequence = fields.Char(string='Code Sequence', default='clv.document.code')
 
     document_code_pool_id = fields.Many2one(
         comodel_name='clv.document.code_pool',

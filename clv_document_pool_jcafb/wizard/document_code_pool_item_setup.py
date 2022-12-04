@@ -44,7 +44,7 @@ class DocumentCodePoolSetUp(models.TransientModel):
                     'code_sequence': document_code_pool.code_sequence,
                 }
                 document_code_pool_item = DocumentCodePoolItem.create(values)
-                document_code_pool_item.code = '/'
+                # document_code_pool_item.code = '/'
 
                 _logger.info(u'%s %s', '>>>>>>>>>>', document_code_pool_item.code)
 

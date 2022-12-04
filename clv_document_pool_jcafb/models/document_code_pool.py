@@ -10,4 +10,4 @@ class DocumentCodePool(models.Model):
     _name = "clv.document.code_pool"
     _inherit = 'clv.abstract.pool'
 
-    code_sequence = fields.Char(string='Code Sequence', default='clv.person.code')
+    code_sequence = fields.Char(string='Code Sequence', default='clv.document.code')
