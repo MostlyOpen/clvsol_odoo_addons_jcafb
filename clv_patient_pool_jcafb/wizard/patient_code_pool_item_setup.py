@@ -44,7 +44,7 @@ class PatientCodePoolSetUp(models.TransientModel):
                     'code_sequence': patient_code_pool.code_sequence,
                 }
                 patient_code_pool_item = PatientCodePoolItem.create(values)
-                patient_code_pool_item.code = '/'
+                # patient_code_pool_item.code = '/'
 
                 _logger.info(u'%s %s', '>>>>>>>>>>', patient_code_pool_item.code)
 
