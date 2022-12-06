@@ -35,6 +35,7 @@
         'wizard/patient_document_setup_view.xml',
         'wizard/patient_document_setup_2_view.xml',
         'wizard/patient_lab_test_request_setup_view.xml',
+        'wizard/patient_lab_test_request_setup_2_view.xml',
     ],
     'demo': [],
     'test': [],
