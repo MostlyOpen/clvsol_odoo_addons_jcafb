@@ -34,6 +34,7 @@
         'wizard/patient_aux_document_setup_view.xml',
         'wizard/patient_aux_document_setup_2_view.xml',
         'wizard/patient_aux_lab_test_request_setup_view.xml',
+        'wizard/patient_aux_lab_test_request_setup_2_view.xml',
         'wizard/patient_aux_set_code_view.xml',
         'wizard/document_associate_to_related_patient_view.xml',
         'wizard/lab_test_request_associate_to_related_patient_view.xml',
