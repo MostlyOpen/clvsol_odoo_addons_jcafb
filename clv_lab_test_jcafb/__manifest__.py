@@ -48,6 +48,7 @@
         # 'data/survey_user_input.xml',
         'data/lab_test_export_xls_param_pattern.xml',
         'wizard/lab_test_request_receive_view.xml',
+        'wizard/lab_test_result_receive_view.xml',
         'wizard/lab_test_request_associate_to_set_view.xml',
         'wizard/lab_test_report_associate_to_set_view.xml',
         # 'wizard/lab_test_result_set_survey_user_input_view.xml',
