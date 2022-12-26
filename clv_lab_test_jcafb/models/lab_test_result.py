@@ -8,6 +8,12 @@ from odoo import fields, models
 class LabTestResult(models.Model):
     _inherit = 'clv.lab_test.result'
 
+    employee_id_request = fields.Many2one(
+        comodel_name='hr.employee',
+        string='Received by'
+    )
+    date_received = fields.Datetime(string='Received Date')
+
     # person_id = fields.Many2one(
     #     comodel_name='clv.person',
     #     string="Person",
