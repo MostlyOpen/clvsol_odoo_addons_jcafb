@@ -26,7 +26,7 @@ class LabTestResult(models.Model):
     def lab_test_result_export_xls(self, dir_path, file_name, use_template, template_dir_path):
 
         lab_test_type = self.lab_test_type_id.code
-        lab_test_request_code = self.lab_test_request_id.code
+        # lab_test_request_code = self.lab_test_request_id.code
         lab_test_result_code = self.code
 
         FileSystemDirectory = self.env['clv.file_system.directory']
@@ -40,12 +40,14 @@ class LabTestResult(models.Model):
             book = open_workbook(template_file_path, formatting_info=True)
             wbook = copy(book)
             sheet = wbook.get_sheet(0)
-            file_name = file_name.replace('<type>', lab_test_type).replace('<request_code>', lab_test_request_code)
+            # file_name = file_name.replace('<type>', lab_test_type).replace('<request_code>', lab_test_request_code)
+            file_name = file_name.replace('<type>', lab_test_type).replace('<result_code>', lab_test_result_code)
             file_path = dir_path + '/' + file_name
             idx = book.sheet_names().index(template_file_name)
             wbook.get_sheet(idx).name = file_name
         else:
-            file_name = file_name.replace('<type>', lab_test_type).replace('<request_code>', lab_test_request_code)
+            # file_name = file_name.replace('<type>', lab_test_type).replace('<request_code>', lab_test_request_code)
+            file_name = file_name.replace('<type>', lab_test_type).replace('<result_code>', lab_test_result_code)
             file_path = dir_path + '/' + file_name
             wbook = xlwt.Workbook()
             sheet = wbook.add_sheet(file_name)
@@ -55,11 +57,15 @@ class LabTestResult(models.Model):
         lab_test_type_id = self.lab_test_type_id.id
         reference_name = self.ref_id.name
         reference_code = self.ref_id.code
-        received_by_name = self.lab_test_request_id.employee_id.name
-        received_by_code = self.lab_test_request_id.employee_id.code
-        date_received = (self.lab_test_request_id.date_received + timedelta(hours=delta_hours)).strftime('%d-%m-%Y  %H:%M:%S')
+        # received_by_name = self.lab_test_request_id.employee_id.name
+        # received_by_code = self.lab_test_request_id.employee_id.code
+        received_by_name = self.employee_id_request.name
+        received_by_code = self.employee_id_request.code
+        # date_received = (self.lab_test_request_id.date_received + timedelta(hours=delta_hours)).strftime('%d-%m-%Y  %H:%M:%S')
+        date_received = (self.date_received + timedelta(hours=delta_hours)).strftime('%d-%m-%Y  %H:%M:%S')
 
-        _logger.info(u'%s %s %s %s', '>>>>>>>>>>', lab_test_request_code, lab_test_type, use_template)
+        # _logger.info(u'%s %s %s %s', '>>>>>>>>>>', lab_test_request_code, lab_test_type, use_template)
+        _logger.info(u'%s %s %s %s', '>>>>>>>>>>', lab_test_result_code, lab_test_type, use_template)
 
         save_book = False
 
