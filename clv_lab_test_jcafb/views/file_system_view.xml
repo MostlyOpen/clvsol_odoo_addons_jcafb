@@ -65,6 +65,19 @@
                 <field name="file_content" filename="file_name"/>
                 <field name="stored_file_name" invisible="1"/>
                 <field name="directory_id" options="{'no_open': False, 'no_create': True}" invisible="1"/>
+                <button
+                    type="action"
+                    name="%(clv_lab_test_result_report_export_xls_action)d"
+                    string="Lab Test Report Export XLS"
+                    class="oe_stat_button"
+                    icon="fa-file-excel-o"
+                    help="Lab Test Report Export XLS"
+                    attrs="{'invisible': [('approved', '=', False)]}"
+                />
+                <field name="file_name_report"/>
+                <field name="file_content_report" filename="file_name_report" attrs="{'invisible': [('approved', '=', False)]}"/>
+                <field name="stored_file_name_report" invisible="1"/>
+                <field name="directory_id_report" options="{'no_open': False, 'no_create': True}" invisible="1"/>
             </group>
         </field>
     </record>
