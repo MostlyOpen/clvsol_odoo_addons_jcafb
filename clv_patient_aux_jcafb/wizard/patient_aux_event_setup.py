@@ -52,7 +52,7 @@ class PatientAuxEventSetUp(models.TransientModel):
 
     lab_test_type_ids = fields.Many2many(
         comodel_name='clv.lab_test.type',
-        relation='clv_patient_aux_lab_test_request_setup_rel',
+        relation='clv_patient_aux_lab_test_result_setup_rel',
         string='Lab Test Types'
     )
 
@@ -64,7 +64,7 @@ class PatientAuxEventSetUp(models.TransientModel):
         Document = self.env['clv.document']
         DocumentType = self.env['clv.document.type']
 
-        LabTestRequest = self.env['clv.lab_test.request']
+        LabTestResult = self.env['clv.lab_test.result']
 
         for patient_aux in self.patient_aux_ids:
 
@@ -144,21 +144,21 @@ class PatientAuxEventSetUp(models.TransientModel):
                     _logger.info(u'%s %s', '>>>>>>>>>>>>>>>', new_document.code)
 
             for lab_test_type in self.lab_test_type_ids:
-                m2m_list = []
-                m2m_list.append((4, lab_test_type.id))
+                # m2m_list = []
+                # m2m_list.append((4, lab_test_type.id))
 
                 ref_id = patient_aux._name + ',' + str(patient_aux.id)
 
-                _logger.info(u'%s %s %s', '>>>>>>>>>>', ref_id, m2m_list)
+                _logger.info(u'%s %s %s', '>>>>>>>>>>', ref_id, lab_test_type.id)
 
                 values = {
-                    'code_sequence': 'clv.lab_test.request.code',
-                    'lab_test_type_ids': m2m_list,
+                    'code_sequence': 'clv.lab_test.result.code',
+                    'lab_test_type_id': lab_test_type.id,
                     'ref_id': ref_id,
                     'phase_id': self.phase_id.id,
                 }
-                lab_test_request = LabTestRequest.create(values)
+                lab_test_result = LabTestResult.create(values)
 
-                _logger.info(u'%s %s', '>>>>>>>>>>', lab_test_request.code)
+                _logger.info(u'%s %s', '>>>>>>>>>>', lab_test_result.code)
 
         return True
