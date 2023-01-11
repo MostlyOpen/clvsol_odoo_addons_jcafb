@@ -4,18 +4,6 @@
 
 <odoo>
 
-    <!--menuitem name="Lab Test Request Code Pool" id="clv_pool.menu_base_base_pools_lab_test_request_code_pool" 
-        parent="clv_pool.menu_base_base_pools"
-        groups="clv_pool.group_user"
-        sequence="10"
-        action="clv_lab_test_pool_jcafb.clv_lab_test_request_code_pool_action"/-->
-
-    <!--menuitem name="Lab Test Request Code Pool Items" id="clv_pool.menu_base_config_pool_lab_test_request_code_pool_items" 
-        parent="clv_pool.menu_base_config_pool"
-        groups="clv_pool.group_user"
-        sequence="10"
-        action="clv_lab_test_pool_jcafb.clv_lab_test_request_code_pool_item_action"/-->
-
     <menuitem name="Lab Test Result Code Pool" id="clv_pool.menu_base_base_pools_lab_test_result_code_pool" 
         parent="clv_pool.menu_base_base_pools"
         groups="clv_pool.group_user"
@@ -27,17 +15,5 @@
         groups="clv_pool.group_user"
         sequence="10"
         action="clv_lab_test_pool_jcafb.clv_lab_test_result_code_pool_item_action"/>
-
-    <!--menuitem name="Lab Test Report Code Pool" id="clv_pool.menu_base_base_pools_lab_test_report_code_pool" 
-        parent="clv_pool.menu_base_base_pools"
-        groups="clv_pool.group_user"
-        sequence="10"
-        action="clv_lab_test_pool_jcafb.clv_lab_test_report_code_pool_action"/-->
-
-    <!--menuitem name="Lab Test Report Code Pool Items" id="clv_pool.menu_base_config_pool_lab_test_report_code_pool_items" 
-        parent="clv_pool.menu_base_config_pool"
-        groups="clv_pool.group_user"
-        sequence="10"
-        action="clv_lab_test_pool_jcafb.clv_lab_test_report_code_pool_item_action"/-->
 
 </odoo>
