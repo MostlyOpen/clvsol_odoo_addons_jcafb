@@ -6,5 +6,5 @@ from . import lab_test_request_code_pool_item_setup
 from . import lab_test_request_code_pool_item_seek
 from . import lab_test_result_code_pool_item_setup
 from . import lab_test_result_code_pool_item_seek
-from . import lab_test_report_code_pool_item_setup
-from . import lab_test_report_code_pool_item_seek
+# from . import lab_test_report_code_pool_item_setup
+# from . import lab_test_report_code_pool_item_seek
