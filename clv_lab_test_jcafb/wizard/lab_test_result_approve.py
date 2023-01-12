@@ -37,13 +37,11 @@ class LabTestResultApprove(models.TransientModel):
     employee_id = fields.Many2one(
         comodel_name='hr.employee',
         string='Approved by',
-        # required=True,
         default=_default_employee_id
     )
 
     date_approved = fields.Date(
         string='Approved Date',
-        # required=True,
         default=lambda *a: datetime.now().strftime('%Y-%m-%d'),
     )
 
@@ -64,12 +62,6 @@ class LabTestResultApprove(models.TransientModel):
                 lab_test_result.reg_state = 'done'
                 lab_test_result.state = 'approved'
 
-                # lab_test_result.lab_test_report_ids.approved = self.approved
-                # lab_test_result.lab_test_report_ids.employee_id = self.employee_id
-                # lab_test_result.lab_test_report_ids.date_approved = self.date_approved
-                # lab_test_result.lab_test_report_ids.reg_state = 'done'
-                # lab_test_result.lab_test_report_ids.state = 'approved'
-
             else:
 
                 lab_test_result.approved = False
@@ -77,11 +69,5 @@ class LabTestResultApprove(models.TransientModel):
                 lab_test_result.date_approved = False
                 lab_test_result.reg_state = 'revised'
                 lab_test_result.state = 'available'
-
-                # lab_test_result.lab_test_report_ids.approved = False
-                # lab_test_result.lab_test_report_ids.employee_id = False
-                # lab_test_result.lab_test_report_ids.date_approved = False
-                # lab_test_result.lab_test_report_ids.reg_state = 'revised'
-                # lab_test_result.lab_test_report_ids.state = 'available'
 
         return True

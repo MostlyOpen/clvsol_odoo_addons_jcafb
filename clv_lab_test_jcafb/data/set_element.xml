@@ -4,13 +4,6 @@
 
 <odoo noupdate="1">
 
-    <!--record id="clv_referenceable_model_set_element" model="clv.referenceable.model">
-        <field name="base_model">clv.set.element</field>
-        <field name="name">Lab Test Request</field>
-        <field name="model">clv.lab_test.request</field>
-        <field name="priority">10</field>
-    </record-->
-
     <record id="clv_referenceable_model_set_element_result" model="clv.referenceable.model">
         <field name="base_model">clv.set.element</field>
         <field name="name">Lab Test Result</field>
