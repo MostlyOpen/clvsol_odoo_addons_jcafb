@@ -4,7 +4,7 @@
 
 <odoo>
 
-    <record id="clv_lab_test_report_view_form_file_system" model="ir.ui.view">
+    <!--record id="clv_lab_test_report_view_form_file_system" model="ir.ui.view">
         <field name="name">clv.lab_test.report.form</field>
         <field name="model">clv.lab_test.report</field>
         <field name="inherit_id" ref="clv_lab_test.clv_lab_test_report_view_form"/>
@@ -20,16 +20,15 @@
                     help="Lab Test Report Export XLS"
                     attrs="{'invisible': [('approved', '=', False)]}"
                 />
-                <!--field name="file_name" invisible="1"/-->
                 <field name="file_name"/>
                 <field name="file_content" filename="file_name" attrs="{'invisible': [('approved', '=', False)]}"/>
                 <field name="stored_file_name" invisible="1"/>
                 <field name="directory_id" options="{'no_open': False, 'no_create': True}" invisible="1"/>
             </group>
         </field>
-    </record>
+    </record-->
 
-    <record id="clv_lab_test_report_view_tree_file_system" model="ir.ui.view">
+    <!--record id="clv_lab_test_report_view_tree_file_system" model="ir.ui.view">
         <field name="name">clv.lab_test.report.tree</field>
         <field name="model">clv.lab_test.report</field>
         <field name="inherit_id" ref="clv_lab_test.clv_lab_test_report_view_tree"/>
@@ -43,7 +42,7 @@
                 <field name="directory_id" invisible="1"/>
             </field>
         </field>
-    </record>
+    </record-->
 
     <record id="clv_lab_test_result_view_form_file_system" model="ir.ui.view">
         <field name="name">clv.lab_test.result.form</field>
@@ -79,6 +78,22 @@
                 <field name="stored_file_name_report" invisible="1"/>
                 <field name="directory_id_report" options="{'no_open': False, 'no_create': True}" invisible="1"/>
             </group>
+        </field>
+    </record>
+
+    <record id="clv_lab_test_result_view_tree_file_system" model="ir.ui.view">
+        <field name="name">clv.lab_test.result.tree</field>
+        <field name="model">clv.lab_test.result</field>
+        <field name="inherit_id" ref="clv_lab_test.clv_lab_test_result_view_tree"/>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <field name="lab_test_request_id" position="after">
+                <field name="approved" invisible="1"/>
+                <field name="file_name" invisible="1"/>
+                <field name="file_content" filename="file_name" widget="binary" attrs="{'invisible': [('approved', '=', False)]}"/>
+                <field name="stored_file_name" invisible="1"/>
+                <field name="directory_id" invisible="1"/>
+            </field>
         </field>
     </record>
 
