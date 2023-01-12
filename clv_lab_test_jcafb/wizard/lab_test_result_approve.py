@@ -64,11 +64,11 @@ class LabTestResultApprove(models.TransientModel):
                 lab_test_result.reg_state = 'done'
                 lab_test_result.state = 'approved'
 
-                lab_test_result.lab_test_report_ids.approved = self.approved
-                lab_test_result.lab_test_report_ids.employee_id = self.employee_id
-                lab_test_result.lab_test_report_ids.date_approved = self.date_approved
-                lab_test_result.lab_test_report_ids.reg_state = 'done'
-                lab_test_result.lab_test_report_ids.state = 'approved'
+                # lab_test_result.lab_test_report_ids.approved = self.approved
+                # lab_test_result.lab_test_report_ids.employee_id = self.employee_id
+                # lab_test_result.lab_test_report_ids.date_approved = self.date_approved
+                # lab_test_result.lab_test_report_ids.reg_state = 'done'
+                # lab_test_result.lab_test_report_ids.state = 'approved'
 
             else:
 
@@ -78,10 +78,10 @@ class LabTestResultApprove(models.TransientModel):
                 lab_test_result.reg_state = 'revised'
                 lab_test_result.state = 'available'
 
-                lab_test_result.lab_test_report_ids.approved = False
-                lab_test_result.lab_test_report_ids.employee_id = False
-                lab_test_result.lab_test_report_ids.date_approved = False
-                lab_test_result.lab_test_report_ids.reg_state = 'revised'
-                lab_test_result.lab_test_report_ids.state = 'available'
+                # lab_test_result.lab_test_report_ids.approved = False
+                # lab_test_result.lab_test_report_ids.employee_id = False
+                # lab_test_result.lab_test_report_ids.date_approved = False
+                # lab_test_result.lab_test_report_ids.reg_state = 'revised'
+                # lab_test_result.lab_test_report_ids.state = 'available'
 
         return True
