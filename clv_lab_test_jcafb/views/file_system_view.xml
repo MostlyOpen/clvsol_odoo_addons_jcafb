@@ -87,12 +87,17 @@
         <field name="inherit_id" ref="clv_lab_test.clv_lab_test_result_view_tree"/>
         <field name="priority" eval="20"/>
         <field name="arch" type="xml">
-            <field name="lab_test_request_id" position="after">
+            <field name="lab_test_type_id" position="after">
                 <field name="approved" invisible="1"/>
                 <field name="file_name" invisible="1"/>
-                <field name="file_content" filename="file_name" widget="binary" attrs="{'invisible': [('approved', '=', False)]}"/>
+                <!--field name="file_content" filename="file_name" widget="binary" attrs="{'invisible': [('approved', '=', False)]}"/-->
+                <field name="file_content" filename="file_name" widget="binary"/>
                 <field name="stored_file_name" invisible="1"/>
                 <field name="directory_id" invisible="1"/>
+                <field name="file_name_report" invisible="1"/>
+                <field name="file_content_report" filename="file_name_report" widget="binary" attrs="{'invisible': [('approved', '=', False)]}"/>
+                <field name="stored_file_name_report" invisible="1"/>
+                <field name="directory_id_report" invisible="1"/>
             </field>
         </field>
     </record>
