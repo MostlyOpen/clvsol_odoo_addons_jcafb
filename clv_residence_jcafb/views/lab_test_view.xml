@@ -98,7 +98,7 @@
         </field>
     </record>
 
-    <record id="clv_residence_view_form_lab_test_report" model="ir.ui.view">
+    <!--record id="clv_residence_view_form_lab_test_report" model="ir.ui.view">
         <field name="name">clv.residence.form</field>
         <field name="model">clv.residence</field>
         <field name="inherit_id" ref="clv_residence.clv_residence_view_form"/>
@@ -131,9 +131,9 @@
                 </page>
             </page>
         </field>
-    </record>
+    </record-->
 
-    <record id="clv_residence_view_tree_lab_test_report" model="ir.ui.view">
+    <!--record id="clv_residence_view_tree_lab_test_report" model="ir.ui.view">
         <field name="name">clv.residence.tree</field>
         <field name="model">clv.residence</field>
         <field name="inherit_id" ref="clv_residence.clv_residence_view_tree"/>
@@ -143,6 +143,6 @@
                 <field name="count_lab_test_reports" invisible="True"/>
             </field>
         </field>
-    </record>
+    </record-->
 
 </odoo>

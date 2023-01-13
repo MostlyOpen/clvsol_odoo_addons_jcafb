@@ -5,7 +5,7 @@
 {
     'name': 'Residence (customizations for CLVhealth-JCAFB Solution)',
     'summary': 'Residence Module customizations for CLVhealth-JCAFB Solution.',
-    'version': '15.0.6.0',
+    'version': '15.0.6.1',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
     'license': 'AGPL-3',
