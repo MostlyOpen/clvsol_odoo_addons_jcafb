@@ -4,7 +4,7 @@
 
 <odoo>
         
-    <record id="clv_patient_view_form_lab_test_request" model="ir.ui.view">
+    <!--record id="clv_patient_view_form_lab_test_request" model="ir.ui.view">
         <field name="name">clv.patient.form</field>
         <field name="model">clv.patient</field>
         <field name="inherit_id" ref="clv_patient.clv_patient_view_form"/>
@@ -37,9 +37,9 @@
                 </page>
             </page>
         </field>
-    </record>
+    </record-->
 
-    <record id="clv_patient_view_tree_lab_test_request" model="ir.ui.view">
+    <!--record id="clv_patient_view_tree_lab_test_request" model="ir.ui.view">
         <field name="name">clv.patient.tree</field>
         <field name="model">clv.patient</field>
         <field name="inherit_id" ref="clv_patient.clv_patient_view_tree"/>
@@ -49,7 +49,7 @@
                 <field name="count_lab_test_requests" invisible="True"/>
             </field>
         </field>
-    </record>
+    </record-->
 
     <record id="clv_patient_view_form_lab_test_result" model="ir.ui.view">
         <field name="name">clv.patient.form</field>
