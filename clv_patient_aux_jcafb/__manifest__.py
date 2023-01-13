@@ -5,7 +5,7 @@
 {
     'name': 'Patient (Aux) (customizations for CLVhealth-JCAFB Solution)',
     'summary': 'Patient (Aux) Module customizations for CLVhealth-JCAFB Solution.',
-    'version': '15.0.6.0',
+    'version': '15.0.6.1',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
     'license': 'AGPL-3',
@@ -40,7 +40,7 @@
         'wizard/document_associate_to_related_patient_view.xml',
         'wizard/lab_test_request_associate_to_related_patient_view.xml',
         'wizard/lab_test_result_associate_to_related_patient_view.xml',
-        'wizard/lab_test_report_associate_to_related_patient_view.xml',
+        # 'wizard/lab_test_report_associate_to_related_patient_view.xml',
         'wizard/event_attendee_associate_to_related_patient_view.xml',
     ],
     'demo': [],
