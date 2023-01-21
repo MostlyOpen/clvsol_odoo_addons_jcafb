@@ -32,12 +32,17 @@ class LabTestResultAssociateToRelatedPatient(models.TransientModel):
 
             _logger.info(u'%s %s %s', '>>>>>', lab_test_result_count, lab_test_result.display_name)
 
-            if lab_test_result.ref_id.related_patient_id.id is not False:
+            try:
 
-                related_patient = lab_test_result.ref_id.related_patient_id
-                ref_id = related_patient._name + ',' + str(related_patient.id)
-                lab_test_result.ref_id = ref_id
+                if lab_test_result.ref_id.related_patient_id.id is not False:
 
-                _logger.info(u'%s %s', '>>>>>>>>>>', lab_test_result.ref_id.name)
+                    related_patient = lab_test_result.ref_id.related_patient_id
+                    ref_id = related_patient._name + ',' + str(related_patient.id)
+                    lab_test_result.ref_id = ref_id
+
+                    _logger.info(u'%s %s', '>>>>>>>>>>', lab_test_result.ref_id.name)
+
+            except AttributeError:
+                pass
 
         return True
