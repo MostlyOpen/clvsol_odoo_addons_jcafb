@@ -32,12 +32,17 @@ class EventAttendeeAssociateToRelatedPatient(models.TransientModel):
 
             _logger.info(u'%s %s %s', '>>>>>', event_attendee_count, event_attendee.display_name)
 
-            if event_attendee.ref_id.related_patient_id.id is not False:
+            try:
 
-                related_patient = event_attendee.ref_id.related_patient_id
-                ref_id = related_patient._name + ',' + str(related_patient.id)
-                event_attendee.ref_id = ref_id
+                if event_attendee.ref_id.related_patient_id.id is not False:
 
-                _logger.info(u'%s %s', '>>>>>>>>>>', event_attendee.ref_id.name)
+                    related_patient = event_attendee.ref_id.related_patient_id
+                    ref_id = related_patient._name + ',' + str(related_patient.id)
+                    event_attendee.ref_id = ref_id
+
+                    _logger.info(u'%s %s', '>>>>>>>>>>', event_attendee.ref_id.name)
+
+            except AttributeError:
+                pass
 
         return True
