@@ -32,12 +32,17 @@ class DocumentAssociateToRelatedPatient(models.TransientModel):
 
             _logger.info(u'%s %s %s', '>>>>>', document_count, document.display_name)
 
-            if document.ref_id.related_patient_id.id is not False:
+            try:
 
-                related_patient = document.ref_id.related_patient_id
-                ref_id = related_patient._name + ',' + str(related_patient.id)
-                document.ref_id = ref_id
+                if document.ref_id.related_patient_id.id is not False:
 
-                _logger.info(u'%s %s', '>>>>>>>>>>', document.ref_id.name)
+                    related_patient = document.ref_id.related_patient_id
+                    ref_id = related_patient._name + ',' + str(related_patient.id)
+                    document.ref_id = ref_id
+
+                    _logger.info(u'%s %s', '>>>>>>>>>>', document.ref_id.name)
+
+            except AttributeError:
+                pass
 
         return True
