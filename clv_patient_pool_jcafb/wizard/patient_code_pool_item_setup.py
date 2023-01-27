@@ -31,7 +31,6 @@ class PatientCodePoolSetUp(models.TransientModel):
         Patient = self.env['clv.patient']
         patients = Patient.search([], order='code')
         code_min = patients[0].code
-        _logger.info(u'%s %s (%s)', '>>>>>', code_min, patients)
         number_min_str = code_min[2:code_min.index('-')].replace('.', '')
         number_min = int(number_min_str)
         return number_min
