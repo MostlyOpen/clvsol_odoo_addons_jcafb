@@ -4,3 +4,4 @@
 
 from . import patient_code_pool_item_setup
 from . import patient_code_pool_item_seek
+from . import patient_code_pool_item_mass_edit

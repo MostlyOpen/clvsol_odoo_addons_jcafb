@@ -21,9 +21,33 @@ class PatientCodePoolSetUp(models.TransientModel):
         string='Patient Code Pools',
         default=_default_patient_code_pool_ids
     )
+
     code_quantity = fields.Integer(
         string='Code Quantity',
         help="Quantity of Codes",
+    )
+
+    def _default_sequence_min(self):
+        Patient = self.env['clv.patient']
+        patients = Patient.search([], order='code')
+        code_min = patients[0].code
+        number_min_str = code_min[2:code_min.index('-')].replace('.', '')
+        number_min = int(number_min_str)
+        return number_min
+    sequence_min = fields.Integer(
+        string='Sequence Minimum',
+        help="Sequence Minimum value",
+        default=_default_sequence_min
+    )
+
+    def _default_sequence_max(self):
+        IrSequence = self.env['ir.sequence']
+        ir_sequence = IrSequence.search([('code', '=', 'clv.person.code')])
+        return ir_sequence.number_next_actual - 1
+    sequence_max = fields.Integer(
+        string='Sequence Maximum',
+        help="Sequence Maximum value",
+        default=_default_sequence_max
     )
 
     def do_patient_code_pool_item_setup(self):
@@ -35,17 +59,47 @@ class PatientCodePoolSetUp(models.TransientModel):
 
             _logger.info(u'%s %s (%s)', '>>>>>', patient_code_pool.name, self.code_quantity)
 
+            IrSequence = self.env['ir.sequence']
+            ir_sequence = IrSequence.search([('code', '=', 'clv.person.code')])
+
+            number_next_actual = ir_sequence.number_next_actual
+            prefix = ir_sequence.prefix
+            padding = ir_sequence.padding
+
+            number = self.sequence_min
             count = 0
-            while count < self.code_quantity:
-                count += 1
+            while (count < self.code_quantity) and (number < self.sequence_max):
 
-                values = {
-                    'patient_code_pool_id': patient_code_pool.id,
-                    'code_sequence': patient_code_pool.code_sequence,
-                }
-                patient_code_pool_item = PatientCodePoolItem.create(values)
-                # patient_code_pool_item.code = '/'
+                number_str = str(number)
+                while len(number_str) < padding:
+                    number_str = '0' + number_str
+                sequence_str = prefix + number_str
+                format_code = self.env['clv.abstract.code'].format_code(sequence_str)
+                pool_item = PatientCodePoolItem.search([('code', '=', format_code)])
 
-                _logger.info(u'%s %s', '>>>>>>>>>>', patient_code_pool_item.code)
+                if pool_item.id is False:
+
+                    count += 1
+
+                    if number < number_next_actual:
+
+                        values = {
+                            'patient_code_pool_id': patient_code_pool.id,
+                            'code_sequence': patient_code_pool.code_sequence,
+                            'code': format_code
+                        }
+
+                    else:
+
+                        values = {
+                            'patient_code_pool_id': patient_code_pool.id,
+                            'code_sequence': patient_code_pool.code_sequence,
+                        }
+
+                    patient_code_pool_item = PatientCodePoolItem.create(values)
+
+                    _logger.info(u'%s %s', '>>>>>>>>>>', patient_code_pool_item.code)
+
+                number += 1
 
         return True

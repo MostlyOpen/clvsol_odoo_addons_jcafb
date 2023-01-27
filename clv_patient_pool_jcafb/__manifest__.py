@@ -5,7 +5,7 @@
 {
     'name': 'Patient Code Pool (customizations for CLVhealth-JCAFB Solution)',
     'summary': 'Patient Code Pool Module customizations for CLVhealth-JCAFB Solution.',
-    'version': '15.0.6.0',
+    'version': '15.0.6.1',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
     'license': 'AGPL-3',
@@ -21,6 +21,7 @@
         'views/pool_menu_view.xml',
         'wizard/patient_code_pool_item_setup_view.xml',
         'wizard/patient_code_pool_item_seek_view.xml',
+        'wizard/patient_code_pool_item_mass_edit_view.xml',
     ],
     'demo': [],
     'test': [],

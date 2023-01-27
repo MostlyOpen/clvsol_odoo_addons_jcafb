@@ -16,6 +16,8 @@
                 <group>
                     <group>
                         <field name="code_quantity"/>
+                        <field name="sequence_min"/>
+                        <field name="sequence_max"/>
                     </group>
                 </group>
                 <footer>

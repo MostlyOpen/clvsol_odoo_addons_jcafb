@@ -4,3 +4,4 @@
 
 from . import lab_test_result_code_pool_item_setup
 from . import lab_test_result_code_pool_item_seek
+from . import lab_test_result_code_pool_item_mass_edit
