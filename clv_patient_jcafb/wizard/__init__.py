@@ -4,7 +4,5 @@
 
 from . import patient_associate_to_set
 from . import patient_document_setup
-from . import patient_lab_test_request_setup
 from . import patient_document_setup_2
-from . import patient_lab_test_request_setup_2
 from . import patient_lab_test_result_setup_2

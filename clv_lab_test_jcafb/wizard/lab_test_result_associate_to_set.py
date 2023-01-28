@@ -10,17 +10,17 @@ from odoo.exceptions import UserError
 _logger = logging.getLogger(__name__)
 
 
-class LabTestReportAssociateToSet(models.TransientModel):
-    _description = 'Lab Test Report Associate to Set'
-    _name = 'clv.lab_test.report.associate_to_set'
+class LabTestResultAssociateToSet(models.TransientModel):
+    _description = 'Lab Test Result Associate to Set'
+    _name = 'clv.lab_test.result.associate_to_set'
 
-    def _default_lab_test_report_ids(self):
+    def _default_lab_test_result_ids(self):
         return self._context.get('active_ids')
-    lab_test_report_ids = fields.Many2many(
-        comodel_name='clv.lab_test.report',
-        relation='clv_lab_test_report_associate_to_set_rel',
-        string='Lab Test Reports',
-        default=_default_lab_test_report_ids
+    lab_test_result_ids = fields.Many2many(
+        comodel_name='clv.lab_test.result',
+        relation='clv_lab_test_result_associate_to_set_rel',
+        string='Lab Test Results',
+        default=_default_lab_test_result_ids
     )
 
     create_new_set = fields.Boolean(string='Create new Set', default=False)
@@ -33,19 +33,7 @@ class LabTestReportAssociateToSet(models.TransientModel):
 
     set_name = fields.Char(string='Set Name', required=False, help="Set Name")
 
-    # def _reopen_form(self):
-    #     self.ensure_one()
-    #     action = {
-    #         'type': 'ir.actions.act_window',
-    #         'res_model': self._name,
-    #         'res_id': self.id,
-    #         'view_type': 'form',
-    #         'view_mode': 'form',
-    #         'target': 'new',
-    #     }
-    #     return action
-
-    def do_lab_test_report_associate_to_set(self):
+    def do_lab_test_result_associate_to_set(self):
         self.ensure_one()
 
         Set = self.env['clv.set']
@@ -57,7 +45,6 @@ class LabTestReportAssociateToSet(models.TransientModel):
 
             if self.set_name is False:
                 raise UserError(u'"Set Name" can not be null!')
-                # return self._reopen_form()
 
             else:
 
@@ -78,30 +65,29 @@ class LabTestReportAssociateToSet(models.TransientModel):
 
             if self.set_id.id is False:
                 raise UserError(u'"Set" can not be null!')
-                # return self._reopen_form()
 
             else:
 
                 actual_set = self.set_id
                 _logger.info(u'%s %s %s', '>>>>>>>>>>', 'actual_set:', actual_set)
 
-        lab_test_report_count = 0
-        for lab_test_report in self.lab_test_report_ids:
+        lab_test_result_count = 0
+        for lab_test_result in self.lab_test_result_ids:
 
-            lab_test_report_count += 1
+            lab_test_result_count += 1
 
-            _logger.info(u'%s %s %s', '>>>>>', lab_test_report_count, lab_test_report.display_name)
+            _logger.info(u'%s %s %s', '>>>>>', lab_test_result_count, lab_test_result.display_name)
 
             set_element = SetElement.search([
                 ('set_id', '=', actual_set.id),
-                ('ref_id', '=', lab_test_report._name + ',' + str(lab_test_report.id)),
+                ('ref_id', '=', lab_test_result._name + ',' + str(lab_test_result.id)),
             ])
 
             if set_element.id is False:
 
                 values = {}
                 values['set_id'] = actual_set.id
-                values['ref_id'] = lab_test_report._name + ',' + str(lab_test_report.id)
+                values['ref_id'] = lab_test_result._name + ',' + str(lab_test_result.id)
                 _logger.info(u'%s %s %s', '>>>>>>>>>>', 'values:', values)
                 new_set_element = SetElement.create(values)
                 _logger.info(u'%s %s %s', '>>>>>>>>>>', 'new_set_element:', new_set_element)

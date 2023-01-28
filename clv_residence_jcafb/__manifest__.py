@@ -5,7 +5,7 @@
 {
     'name': 'Residence (customizations for CLVhealth-JCAFB Solution)',
     'summary': 'Residence Module customizations for CLVhealth-JCAFB Solution.',
-    'version': '15.0.6.0',
+    'version': '15.0.6.1',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
     'license': 'AGPL-3',
@@ -27,7 +27,8 @@
         'views/lab_test_view.xml',
         'wizard/residence_associate_to_set_view.xml',
         'wizard/residence_document_setup_view.xml',
-        'wizard/residence_lab_test_request_setup_view.xml',
+        'wizard/residence_document_setup_2_view.xml',
+        'wizard/residence_lab_test_result_setup_2_view.xml',
         'wizard/residence_set_code_view.xml',
     ],
     'demo': [],

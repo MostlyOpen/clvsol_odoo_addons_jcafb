@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from . import document
-# from . import community_member
 from . import event_attendee
 from . import lab_test
 from . import patient_aux_code

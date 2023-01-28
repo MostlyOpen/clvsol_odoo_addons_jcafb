@@ -8,9 +8,8 @@ from odoo import fields, models
 class PatientAux(models.Model):
     _inherit = 'clv.patient_aux'
 
-    lab_test_request_ids = fields.One2many(
+    lab_test_request_ids = fields.Integer(
         string='Lab Test Requests',
-        comodel_name='clv.lab_test.request',
         compute='_compute_lab_test_request_ids_and_count',
     )
     count_lab_test_requests = fields.Integer(
@@ -25,20 +24,9 @@ class PatientAux(models.Model):
     def _compute_lab_test_request_ids_and_count(self):
         for record in self:
 
-            search_domain = [
-                ('ref_id', '=', self._name + ',' + str(record.id)),
-            ]
-            lab_test_requests_2 = self.env['clv.lab_test.request'].search(search_domain)
-
-            if record.phase_id.id is not False:
-                search_domain.append(
-                    ('phase_id.id', '=', record.phase_id.id),
-                )
-            lab_test_requests = self.env['clv.lab_test.request'].search(search_domain)
-
-            record.count_lab_test_requests = len(lab_test_requests)
-            record.count_lab_test_requests_2 = len(lab_test_requests_2)
-            record.lab_test_request_ids = [(6, 0, lab_test_requests.ids)]
+            record.lab_test_request_ids = False
+            record.count_lab_test_requests = False
+            record.count_lab_test_requests_2 = False
 
     lab_test_result_ids = fields.One2many(
         string='Lab Test Results',
@@ -72,9 +60,8 @@ class PatientAux(models.Model):
             record.count_lab_test_results_2 = len(lab_test_results_2)
             record.lab_test_result_ids = [(6, 0, lab_test_results.ids)]
 
-    lab_test_report_ids = fields.One2many(
+    lab_test_report_ids = fields.Integer(
         string='Lab Test Reports',
-        comodel_name='clv.lab_test.report',
         compute='_compute_lab_test_report_ids_and_count',
     )
     count_lab_test_reports = fields.Integer(
@@ -89,17 +76,6 @@ class PatientAux(models.Model):
     def _compute_lab_test_report_ids_and_count(self):
         for record in self:
 
-            search_domain = [
-                ('ref_id', '=', self._name + ',' + str(record.id)),
-            ]
-            lab_test_reports_2 = self.env['clv.lab_test.report'].search(search_domain)
-
-            if record.phase_id.id is not False:
-                search_domain.append(
-                    ('phase_id.id', '=', record.phase_id.id),
-                )
-            lab_test_reports = self.env['clv.lab_test.report'].search(search_domain)
-
-            record.count_lab_test_reports = len(lab_test_reports)
-            record.count_lab_test_reports_2 = len(lab_test_reports_2)
-            record.lab_test_report_ids = [(6, 0, lab_test_reports.ids)]
+            record.lab_test_report_ids = False
+            record.count_lab_test_reports = False
+            record.count_lab_test_reports_2 = False

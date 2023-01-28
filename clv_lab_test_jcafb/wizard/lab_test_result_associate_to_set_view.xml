@@ -4,15 +4,15 @@
 
 <odoo>
 
-    <record id="clv_lab_test_report_associate_to_set_view_form" model="ir.ui.view">
-        <field name="name">clv.lab_test.report.associate_to_set.form</field>
-        <field name="model">clv.lab_test.report.associate_to_set</field>
+    <record id="clv_lab_test_result_associate_to_set_view_form" model="ir.ui.view">
+        <field name="name">clv.lab_test.result.associate_to_set.form</field>
+        <field name="model">clv.lab_test.result.associate_to_set</field>
         <field name="arch" type="xml">
             <form>
                 <div class="oe_right">
                 </div>
-                <label for="lab_test_report_ids"/>
-                <field name="lab_test_report_ids"/>
+                <label for="lab_test_result_ids"/>
+                <field name="lab_test_result_ids"/>
                 <group>
                     <group>
                         <field name="create_new_set"/>
@@ -23,7 +23,7 @@
                 <footer>
                     <button 
                         type="object"
-                        name="do_lab_test_report_associate_to_set"
+                        name="do_lab_test_result_associate_to_set"
                         string="Associate to Set"
                         class="oe_highlight"
                         />
@@ -35,10 +35,10 @@
     </record>
 
     <!-- More button Action -->
-    <record id="clv_lab_test_report_associate_to_set_action" model="ir.actions.act_window">
-        <field name="name">Lab Test Report Associate to Set</field>
-        <field name="binding_model_id" ref="model_clv_lab_test_report"/>
-        <field name="res_model">clv.lab_test.report.associate_to_set</field>
+    <record id="clv_lab_test_result_associate_to_set_action" model="ir.actions.act_window">
+        <field name="name">Lab Test Result Associate to Set</field>
+        <field name="binding_model_id" ref="model_clv_lab_test_result"/>
+        <field name="res_model">clv.lab_test.result.associate_to_set</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>

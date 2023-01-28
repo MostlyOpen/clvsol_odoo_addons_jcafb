@@ -4,30 +4,30 @@
 
 <odoo>
 
-    <record id="clv_patient_lab_test_request_setup_2_view_form" model="ir.ui.view">
-        <field name="name">clv.patient.lab_test.request.setup_2.form</field>
-        <field name="model">clv.patient.lab_test.request.setup_2</field>
+    <record id="clv_residence_lab_test_result_setup_2_view_form" model="ir.ui.view">
+        <field name="name">clv.residence.lab_test.result.setup_2.form</field>
+        <field name="model">clv.residence.lab_test.result.setup_2</field>
         <field name="arch" type="xml">
             <form>
                 <div class="oe_right">
                 </div>
-                <label for="patient_ids"/>
-                <field name="patient_ids"/>
+                <label for="residence_ids"/>
+                <field name="residence_ids"/>
                 <!--label for="lab_test_type_ids"/>
                 <field name="lab_test_type_ids" options="{'no_open': False, 'no_create': True}" context="{'search_default_phase_id': phase_id}"/-->
                 <label for="lab_test_type_id"/>
                 <field name="lab_test_type_id" options="{'no_open': False, 'no_create': True}" context="{'search_default_phase_id': phase_id}"/>
                 <group>
                     <group>
-                        <field name="lab_test_request_code"/>
+                        <field name="lab_test_result_code"/>
                         <field name="phase_id" options="{'no_open': False, 'no_create': True}"/>
                     </group>
                 </group>
                 <footer>
                     <button 
                         type="object"
-                        name="do_patient_lab_test_request_setup_2"
-                        string="Lab Test Request Set Up"
+                        name="do_residence_lab_test_result_setup_2"
+                        string="Lab Test Result Set Up"
                         class="oe_highlight"
                         />
                     <button special="cancel" string="Cancel"/>
@@ -38,11 +38,11 @@
     </record>
 
     <!-- More button Action -->
-    <record id="clv_patient_lab_test_request_setup_2_action" model="ir.actions.act_window">
-        <field name="name">Lab Test Request Set Up 2 [Patient]</field>
-        <field name="binding_model_id" ref="model_clv_patient"/>
+    <record id="clv_residence_lab_test_result_setup_2_action" model="ir.actions.act_window">
+        <field name="name">Lab Test Result Set Up 2 [Residence]</field>
+        <field name="binding_model_id" ref="model_clv_residence"/>
         <field name="binding_view_types">form</field>
-        <field name="res_model">clv.patient.lab_test.request.setup_2</field>
+        <field name="res_model">clv.residence.lab_test.result.setup_2</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
