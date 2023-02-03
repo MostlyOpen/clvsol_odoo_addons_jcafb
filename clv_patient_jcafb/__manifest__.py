@@ -32,6 +32,7 @@
         'wizard/patient_document_setup_view.xml',
         'wizard/patient_document_setup_2_view.xml',
         'wizard/patient_lab_test_result_setup_2_view.xml',
+        'wizard/event_attendee_patient_mass_edit_view.xml',
     ],
     'demo': [],
     'test': [],
