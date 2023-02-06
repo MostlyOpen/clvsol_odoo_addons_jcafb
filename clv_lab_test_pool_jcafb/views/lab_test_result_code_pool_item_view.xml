@@ -64,6 +64,7 @@
                 <newline/>
                 <group name="group_by" expand="0" string="Group By...">
                     <filter name="filter_lab_test_result_code_pool_id" string="Lab Test Result Code Pool" domain="[]" context="{'group_by':'lab_test_result_code_pool_id'}"/>
+                    <filter name="filter_notes" string="Notes" domain="[]" context="{'group_by':'notes'}"/>
                 </group>
             </search>
         </field>
