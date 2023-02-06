@@ -21,6 +21,8 @@
         'views/pool_menu_view.xml',
         'wizard/residence_code_pool_item_setup_view.xml',
         'wizard/residence_code_pool_item_seek_view.xml',
+        'wizard/residence_code_pool_item_mass_edit_view.xml',
+        'wizard/residence_code_pool_item_get_view.xml',
     ],
     'demo': [],
     'test': [],
