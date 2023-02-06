@@ -4,3 +4,4 @@
 
 from . import residence_code_pool_item_setup
 from . import residence_code_pool_item_seek
+from . import residence_code_pool_item_get
