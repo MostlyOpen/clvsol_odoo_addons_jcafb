@@ -5,3 +5,4 @@
 from . import document_code_pool_item_setup
 from . import document_code_pool_item_seek
 from . import document_code_pool_item_mass_edit
+from . import document_code_pool_item_get
