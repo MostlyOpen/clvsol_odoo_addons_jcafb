@@ -68,7 +68,7 @@ class PatientCodePoolSetUp(models.TransientModel):
 
             number = self.sequence_min
             count = 0
-            while (count < self.code_quantity) and (number < self.sequence_max):
+            while (count < self.code_quantity) and (number <= self.sequence_max):
 
                 number_str = str(number)
                 while len(number_str) < padding:
