@@ -6,12 +6,12 @@ from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 
-class Document(models.Model):
-    _name = "clv.document"
-    _inherit = 'clv.document', 'clv.abstract.code'
+class PatientRec(models.Model):
+    _name = "clv.patient_rec"
+    _inherit = 'clv.patient_rec', 'clv.abstract.code'
 
-    code = fields.Char(string='Document Code', required=False, default='/')
-    code_sequence = fields.Char(default='clv.document.code')
+    code = fields.Char(string='Patient Code', required=False, default=False)
+    code_sequence = fields.Char(default='clv.person.code')
 
     @api.constrains('code')
     def _check_code(self):
