@@ -17,11 +17,25 @@
                             <field name="count_lab_test_results"/>
                         </group>
                         <group>
-                            <button name="clv_lab_test.clv_lab_test_result_action"
+                            <!--button name="clv_lab_test.clv_lab_test_result_action"
                                     type="action"
                                     class="oe_stat_button"
                                     icon="fa-list"
                                     context="{'search_default_ref_name': name, 'search_default_ref_code': code, 'search_default_group_by_phase_id': 1}"
+                                    attrs="{'invisible': [('count_lab_test_results_2', '=', 0)]}"
+                                    >
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="count_lab_test_results_2"/>
+                                    </span>
+                                    <span class="o_stat_text"> Lab Test Result(s)</span>
+                                </div>
+                            </button-->
+                            <button name="clv_lab_test.clv_lab_test_result_action"
+                                    type="action"
+                                    class="oe_stat_button"
+                                    icon="fa-list"
+                                    context="{'search_default_ref_code': code, 'search_default_group_by_phase_id': 1}"
                                     attrs="{'invisible': [('count_lab_test_results_2', '=', 0)]}"
                                     >
                                 <div class="o_form_field o_stat_info">

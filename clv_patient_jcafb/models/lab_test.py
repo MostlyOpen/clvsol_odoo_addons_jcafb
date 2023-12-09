@@ -46,7 +46,7 @@ class Patient(models.Model):
         for record in self:
 
             search_domain = [
-                ('ref_name', '=', record.name),
+                # ('ref_name', '=', record.name),
                 ('ref_code', '=', record.code),
             ]
             lab_test_results_2 = self.env['clv.lab_test.result'].search(search_domain)
