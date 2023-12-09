@@ -29,7 +29,7 @@ class Patient(models.Model):
             #     ('ref_id', '=', self._name + ',' + str(record.id)),
             # ]
             search_domain = [
-                ('ref_name', '=', record.name),
+                # ('ref_name', '=', record.name),
                 ('ref_code', '=', record.code),
             ]
             documents_2 = self.env['clv.document'].search(search_domain)
