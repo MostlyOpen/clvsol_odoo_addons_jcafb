@@ -52,7 +52,7 @@ class PatientEventSetUp(models.TransientModel):
 
     lab_test_type_ids = fields.Many2many(
         comodel_name='clv.lab_test.type',
-        relation='clv_patient_lab_test_result_setup_rel',
+        relation='clv_patient_event_setup_lab_test_type_rel',
         string='Lab Test Types'
     )
 
