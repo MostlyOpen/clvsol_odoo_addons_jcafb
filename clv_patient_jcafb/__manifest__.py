@@ -29,6 +29,7 @@
         'views/event_attendee_view.xml',
         'views/lab_test_view.xml',
         'wizard/patient_associate_to_set_view.xml',
+        'wizard/patient_event_setup_view.xml',
         'wizard/patient_document_setup_view.xml',
         'wizard/patient_document_setup_2_view.xml',
         'wizard/patient_lab_test_result_setup_2_view.xml',
