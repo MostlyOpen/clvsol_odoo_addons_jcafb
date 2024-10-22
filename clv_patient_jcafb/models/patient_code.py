@@ -6,6 +6,26 @@ from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 
+import re
+
+
+def somaPoderada(numero):
+    i = 0
+    soma = 0
+    while i < len(numero):
+        soma = soma + int(numero[i]) * (15 - i)
+        i = i + 1
+    return soma
+
+
+def validaCNS(numero):
+    numero = str(numero)
+    if numero.isdigit():
+        if re.match(r'[1-2]\d{10}00[0-1]\d$', numero) or re.match(r'[7-9]\d{14}$', numero):
+            return somaPoderada(numero) % 11 == 0
+    return False
+
+
 class Patient(models.Model):
     _name = "clv.patient"
     _inherit = 'clv.patient', 'clv.abstract.code'
@@ -28,4 +48,5 @@ class Patient(models.Model):
                 format_code = self.env['clv.abstract.code'].format_code(sequence_str)
 
                 if record.code != format_code:
-                    raise UserError(u'Invalid Code!')
+                    if not validaCNS(record.code):
+                        raise UserError(u'Invalid Code!')
